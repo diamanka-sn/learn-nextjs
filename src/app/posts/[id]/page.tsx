@@ -1,21 +1,9 @@
-const fetchPost = async (postId:string)=>{
-    const post = await fetch(`http://localhost:3000/api/posts/${postId}`, {
-        method: 'GET'
-    })
-    return post.json()
-}
+"use client"
 
-export async function generateMetadata({params}:any){
-    const {post} = await fetchPost(params.id)
-    return {
-        title: post.title,
-        description: post.description,
-        openGraph:{}
-        
-    }
-
-}
-
-export default function PostID({params}:any){
-    return <main>Post {params.id}</main>
+import { useSearchParams } from "next/navigation"
+export default function PostID({params, searchParams}:any){
+    // const searchParams = useSearchParams() 
+    // const name = searchParams.get('name')
+    // console.log(name)
+    return <main>Post {params.id} - name {searchParams.name}</main>
 }
