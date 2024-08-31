@@ -1,0 +1,23 @@
+[
+    {
+        "name":"Modou",
+        "age":25,
+        "city":"Dakar",
+        "id": 12
+    }, {
+        "name":"Mame",
+        "age":30,
+        "city":"Thies",
+        "id": 13
+    },{
+        "name":"Aida",
+        "age":35,
+        "city":"Kaolack",
+        "id": 14
+    },{
+        "name":"Mame",
+        "age":34,
+        "city":"Ziguinchor",
+        "id": 15
+    }
+]
