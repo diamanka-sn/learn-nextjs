@@ -3,7 +3,9 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "sonner";
+import { AppWrapper } from "./context";
 const inter = Inter({ subsets: ["latin"] });
+
 
 // export const metadata: Metadata = {
 //   title: "Learn nextjs",
@@ -24,7 +26,7 @@ const inter = Inter({ subsets: ["latin"] });
 //     locale:"fr",
 //     type:"website"
 //   },
-  
+
 // };
 
 export default function RootLayout({
@@ -35,9 +37,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        <AppWrapper>
+          {children}
+        </AppWrapper>
         {/* <header className="px-8 py-5 text-xl border-b">diamanka.sn@gmail.com</header> */}
-       <div>{children}</div>
-       <Toaster richColors position="top-right"/>
+        <Toaster richColors position="top-right" />
       </body>
     </html>
   );

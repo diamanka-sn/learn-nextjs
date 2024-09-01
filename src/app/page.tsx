@@ -3,7 +3,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { toast } from "sonner";
+import { useAppContext } from "./context";
 export default function Home() {
+  const {hello} = useAppContext()
   const [loading, setLoading] = useState(false);
 
   const fetchData = async () => {
@@ -26,9 +28,10 @@ export default function Home() {
       setLoading(false)
     }
   }
+  
   return (
     <main>
-      Hello world
+      {hello}
       <div className="w-[500px]">
         <Image src="/next.svg" width={300} height={90} alt="default image" />
       </div>
